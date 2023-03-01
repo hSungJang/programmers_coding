@@ -84,6 +84,24 @@ class CustomStatck<T> {
             top--;
         }
     }
+
+    /**
+     * start: 0 , end: size - 1
+     * @param index
+     * @return
+     */
+    public T search(int index) {
+        if (index < 0 || index == this.size) {
+            System.out.println("인덱스 범위를 벗어났습니다.");
+            return null;
+        }
+        if (index > this.top) {
+            System.out.println("값이 없습니다.");
+            return null;
+        }
+        System.out.println(this.stack[index]);
+        return this.stack[index];
+    }
 }
 
 public class StackForArray {
@@ -109,7 +127,9 @@ public class StackForArray {
         statck.push(2);
         statck.push(3);
         statck.push(4);
+        statck.search(0);
         statck.push(5);
+        statck.search(5);
         statck.push(10); // -> push 불가
         statck.pop(); // 기댓값 5
         // 스택 클리어
