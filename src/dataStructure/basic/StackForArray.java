@@ -43,7 +43,7 @@ class CustomStatck<T> {
     }
 
     public void top() {
-        System.out.println("현재 크기: " + (this.top + 1));
+        System.out.println("TOP:: 현재 크기: " + (this.top + 1));
     }
 
     public void peek() {
@@ -53,10 +53,10 @@ class CustomStatck<T> {
 
     public boolean empty() {
         if (this.top == -1) {
-            System.out.println("비어있습니다.");
+            System.out.println("empty:: 비어있습니다.");
             return true;
         }
-        System.out.println("비어있지 않습니다.");
+        System.out.println("empty:: 비어있지 않습니다.");
         return false;
     }
 
@@ -71,7 +71,7 @@ class CustomStatck<T> {
 
     public void push(T data) {
         if (this.size == this.top +1) {
-            System.out.println("더 이상 넣을 수 없습니다.");
+            System.out.println("Push:: 더 이상 넣을 수 없습니다.");
             return;
         };
         this.stack[++this.top] = data;
@@ -92,14 +92,14 @@ class CustomStatck<T> {
      */
     public T search(int index) {
         if (index < 0 || index == this.size) {
-            System.out.println("인덱스 범위를 벗어났습니다.");
+            System.out.println("Search:: 인덱스 범위를 벗어났습니다.");
             return null;
         }
         if (index > this.top) {
-            System.out.println("값이 없습니다.");
+            System.out.println("Search:: 값이 없습니다.");
             return null;
         }
-        System.out.println(this.stack[index]);
+        System.out.println("Search:: "+ this.stack[index]);
         return this.stack[index];
     }
 }
